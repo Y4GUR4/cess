@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, BOSS PRINCE🎉</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #1b0033, #000);
+  color: white;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  flex-direction: column;
+}
+
+#intro h1 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  animation: fadeUp 1.5s forwards;
+}
+
+#intro button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff4ecd, #8f5bff);
+  color: white;
+  box-shadow: 0 0 20px #ff4ecd;
+  animation: fadeUp 1.5s .5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#scene {
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card {
+  width: min(90vw, 520px);
+  height: min(85vh, 620px);
+  background: linear-gradient(180deg, #ffffff, #f4f4ff);
+  color: #222;
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+  animation: popIn 1s ease forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes popIn {
+  from { transform: scale(.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.messageBox {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 14px;
+}
+
+.messageBox p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.messageBox::-webkit-scrollbar {
+  width: 6px;
+}
+.messageBox::-webkit-scrollbar-thumb {
+  background: #8f5bff;
+  border-radius: 10px;
+}
+
+.memory {
+  margin: 18px auto;
+  width: 90%;
+  max-width: 360px;
+  background: white;
+  border-radius: 14px;
+  padding: 10px 10px 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  transform: rotate(var(--tilt));
+  animation: photoIn .8s ease forwards;
+}
+
+.memory img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.memory span {
+  display: block;
+  margin-top: 8px;
+  font-size: .9rem;
+  color: #444;
+  text-align: center;
+  font-style: italic;
+}
+
+@keyframes photoIn {
+  from { opacity: 0; transform: scale(.9) rotate(var(--tilt)); }
+  to { opacity: 1; transform: scale(1) rotate(var(--tilt)); }
+}
+
+.nextBtn {
+  flex-shrink: 0;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #8f5bff, #ff4ecd);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,78,205,.6);
+}
+
+.subtitle {
+  position: absolute;
+  background: black;
+  color: #00ffcc;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: .9rem;
+  box-shadow: 0 0 15px #00ffcc;
+  animation: floatUp 3s ease forwards;
+}
+
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(-20px); }
+}
+
+.confetti {
+  position: fixed;
+  top: -60px;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .card h2 { font-size: 1.6rem; }
+  .messageBox p { font-size: 1rem; }
+}
+</style>
+</head>
+
+<body>
+<audio id="bgm" loop>
+    <source src="the_script_the_man_who_can_t_be_moved_mp3_50598.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    document.addEventListener("click", () => {
+        document.getElementById("bgm").play();
+    }, { once: true });
+</script>
+
+<div id="intro">
+  <h1>⚠️ Birthday Experience Loading…</h1>
+  <button onclick="start()">Start</button>
+</div>
+
+<div id="scene">
+  <div class="card">
+    <h2>Happy Birthday, Cess🎉</h2>
+
+    <div class="messageBox">
+
+      <p>
+        Grabe no, dalawang buwan na pala tayong magkaibigan at ang dami nang lore 😂
+      </p>
+
+      <div class="memory" style="--tilt:-2deg">
+        <img src="main.cess.jpeg" loading="lazy">
+        <span>casual main character moment</span>
+      </div>
+
+      <p>
+        Gusto ko lang sabihin na sobrang aliw ako sa’yo, lalo na sa facial expressions mo.
+        Legit, parang may subtitle mukha mo lagi.
+      </p>
+
+      <div class="memory" style="--tilt:2deg">
+        <img src="budget.webp" loading="lazy">
+        <span>proof na may episode budget</span>
+      </div>
+
+      <p>
+        Kahit di ka magsalita, parang may naka-flash na:
+      </p>
+
+      <p><b>“???”</b>, <b>“teh seryoso ka ba”</b>, o <b>“ayoko na pls”</b> 🤣</p>
+
+      <div class="memory" style="--tilt:-1.5deg">
+        <img src="final boss.jpeg" loading="lazy">
+        <span>final boss energy</span>
+      </div>
+
+      <p>
+        Ang saya lang na nakilala kita bebe.
+        Kung ganito na ka-entertaining ang first 2 months,
+        medyo kinakabahan na ako sa next episodes 😌
+      </p>
+
+      <p>
+        Stay smart, stay kanal, at sana laging malinaw ang subtitles ng mukha mo.
+      </p>
+
+      <p>
+        Enjoy your day, deserve mo lahat ng puto-puto! at good vibes today 🥳🎂
+      </p>
+
+    </div>
+
+    <button class="nextBtn" onclick="subtitleSpam()">
+      🎬 Enable voice lines
+    </button>
+  </div>
+</div>
+
+<script>
+function start() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("scene").style.display = "flex";
+  confettiBlast(120);
+}
+
+function confettiBlast(count) {
+  const images = [
+    "image-removebg-preview.png",
+  ];
+
+  for (let i = 0; i < count; i++) {
+    const c = document.createElement("div");
+    c.className = "confetti";
+
+    
+    const img = images[Math.floor(Math.random() * images.length)];
+    c.style.backgroundImage = `url(${img})`;
+
+    
+    c.style.left = Math.random() * 100 + "vw";
+    const size = Math.random() * 25 + 25; 
+    c.style.width = size + "px";
+    c.style.height = size + "px";
+
+    c.style.animationDuration = (Math.random() * 2 + 2) + "s";
+    c.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5000);
+  }
+}
+
+
+function subtitleSpam() {
+  const lines = [
+    "SOLID!",
+    "word? play? word  plaaaaayy!",
+    "#bobo.com",
+    "BOSS?",
+    "puto puto!",
+    "💀",
+    "ngongi"
+  ];
+
+  for (let i = 0; i < 7; i++) {
+    setTimeout(() => {
+      const s = document.createElement("div");
+      s.className = "subtitle";
+      s.textContent = lines[Math.floor(Math.random()*lines.length)];
+      s.style.left = Math.random()*60 + 20 + "%";
+      s.style.top = Math.random()*60 + 20 + "%";
+      document.getElementById("scene").appendChild(s);
+      setTimeout(() => s.remove(), 3000);
+    }, i * 400);
+  }
+}
+</script>
+
+</body>
+</html>
